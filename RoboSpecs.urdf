@@ -2,6 +2,29 @@
 <robot name="my_robot">
 <!-- Base plate -->
 <!--Base motor-->
-<!--Base motor-->
+<!--shoulder motor case-->
+<!--shoulder motor-->
+<!--upper arm-->
+<!--elbow motor case-->
 <!--elbow motor-->
+<!--forearm-->
+<!--wrist motor case-->
+<!--wrist motor-->
+<!--hand-->
+<!--gripper motor case-->
+<!--left gripper-->
+<!--right gripper-->
+<!--link and joint outline-->
+  <link>
+    <visual>
+      <geometry>
+
+      </geometry>
+      <origin />
+      <material />
+    </visual>
+  </link>
+
+  <joint>
+  </joint>
  </robot>
