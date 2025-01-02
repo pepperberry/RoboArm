@@ -1,4 +1,6 @@
-<robot>
-  <link name="my_link">
-  </link>
-</robot>
+<?xml version="1.0"?>
+<robot name="my_robot">
+<!-- Base plate -->
+<!--Base motor-->
+<!--Base motor-->
+ </robot>
