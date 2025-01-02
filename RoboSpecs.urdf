@@ -1,1 +1,4 @@
-
+<robot>
+  <link name="my_link">
+  </link>
+</robot>
