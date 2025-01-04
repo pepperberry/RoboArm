@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <robot name="my_robot">
 
+<!--
+name: Pepper Berry
+date started: 1/1/2025
+date last updated: 1/3/2025
+uncomplete code
+-->
+
   <material name="blue"><!--for sliding parts-->
     <color rgba="0.0 0.0 1.0 0.0"/>
   </material>
@@ -12,21 +19,261 @@
   <material name="white"><!--for statinorary parts-->
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
+
 <!-- Base plate -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
 <!--Base motor-->
+  <link name="base_motor">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="base_motor_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="base_motor"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--shoulder motor case-->
+  <link name="shoulder_case">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="base_motor"/>
+    <child link="shoulder_case"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--shoulder motor-->
+  <link name="shoulder_motor">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="" type="revolute">
+    <parent link="shoulder_case"/>
+    <child link="shoulder_motor"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--upper arm-->
+  <link name="upper_arm">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="shoulder_motor"/>
+    <child link="upper_arm"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--elbow motor case-->
+  <link name="elbow_case">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="upper_arm"/>
+    <child link="elbow_case"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--elbow motor-->
+  <link name="elbow_motor">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="" type="revolute">
+    <parent link="elbow_case"/>
+    <child link="elbow_motor"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--forearm-->
+  <link name="forearm">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="elbow_motor"/>
+    <child link="forearm"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--wrist motor case-->
+  <link name="wrist_case">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="forearm"/>
+    <child link="wrist_case"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--wrist motor-->
+  <link name="wrist_motor">
+    <visual>
+      <geometry>
+        <cylinder radius="0.0" length="0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="" type="revolute">
+    <parent link="wrist_case"/>
+    <child link="wrist_motor"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--hand-->
+  <link name="hand">
+    <visual>
+      <geometry>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="wrist_motor"/>
+    <child link="hand"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--gripper motor case-->
+  <link name="gripper_case">
+    <visual>
+      <geometry>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="" type="">
+    <parent link="hand"/>
+    <child link="gripper_case"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--left gripper-->
+  <link name="left_gripper">
+    <visual>
+      <geometry>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="left_gripper_joint" type="prismatic">
+    <parent link="gripper_case"/>
+    <child link="left_gripper"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
 <!--right gripper-->
-<!--link and joint outline-->
+  <link name="right_gripper">
+    <visual>
+      <geometry>
+        <box size="0.0 0.0 0.0"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="right_gripper_joint" type="prismatic">
+    <parent link="gripper_case"/>
+    <child link="right_gripper"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
+<!--link and joint outline
   <link name="">
     <visual>
       <geometry>
@@ -44,4 +291,5 @@
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
   </joint>
+-->
  </robot>
