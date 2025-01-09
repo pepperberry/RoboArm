@@ -20,23 +20,22 @@ uncomplete code
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
 
-<!-- Base plate -->
+<!-- Base plate(done) -->
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.38 0.215 0.025"/><!--x(length),y(width),z(height)-->
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.19 0.0 0.0125" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-<!--Base motor-->
+<!--Base motor(needs velocity ect)-->
   <link name="base_motor">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <cylinder radius="0.05" length="0.05"/>
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="green"/>
@@ -46,204 +45,190 @@ uncomplete code
   <joint name="base_motor_joint" type="revolute">
     <parent link="base_link"/>
     <child link="base_motor"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="-0.147 0.0 0.025" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1"/>
   </joint>
 
-<!--shoulder motor case-->
+<!--shoulder motor case(done)-->
   <link name="shoulder_case">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.066 0.06 0.034"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.033 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="base_motor_shoulder_joint" type="fixed">
     <parent link="base_motor"/>
     <child link="shoulder_case"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.1738 0.0 0.025" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--shoulder motor-->
+<!--shoulder motor(needs velocity ect.)-->
   <link name="shoulder_motor">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <cylinder radius="0.02" length="0.081"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
       <material name="green"/>
     </visual>
   </link>
 
-  <joint name="" type="revolute">
+  <joint name="shoudler_joint" type="revolute">
     <parent link="shoulder_case"/>
     <child link="shoulder_motor"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.1738 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1 0.0"/>
   </joint>
 
-<!--upper arm-->
+<!--upper arm(done)-->
   <link name="upper_arm">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.0245 0.07753 0.146"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.073" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="shoudler_arm_joint" type="fixed">
     <parent link="shoulder_motor"/>
     <child link="upper_arm"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.1738 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--elbow motor case-->
+<!--elbow motor case(done)-->
   <link name="elbow_case">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.078 0.054 0.035"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.039 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="upperarm_elbow_joint" type="fixed">
     <parent link="upper_arm"/>
     <child link="elbow_case"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.024 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--elbow motor-->
+<!--elbow motor(needs velocity ect.)-->
   <link name="elbow_motor">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <cylinder radius="0.012" length="0.07"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
       <material name="green"/>
     </visual>
   </link>
 
-  <joint name="" type="revolute">
+  <joint name="elbow_joint" type="revolute">
     <parent link="elbow_case"/>
     <child link="elbow_motor"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.024 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1 0.0"/>
   </joint>
 
-<!--forearm-->
+<!--forearm(done)-->
   <link name="forearm">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <cylinder radius="0.0065" length="0.12"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5708 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="forearm_elbow_joint" type="fixed">
     <parent link="elbow_motor"/>
     <child link="forearm"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.06 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--wrist motor case-->
+<!--wrist motor case(done)-->
   <link name="wrist_case">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.06 0.04136 0.02639"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.03 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="arm_wrist_joint" type="fixed">
     <parent link="forearm"/>
     <child link="wrist_case"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="-0.06 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--wrist motor-->
+<!--wrist motor(needs velocity ect.)-->
   <link name="wrist_motor">
     <visual>
       <geometry>
-        <cylinder radius="0.0" length="0.0"/>
+        <cylinder radius="0.01204" length="0.052"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
       <material name="green"/>
     </visual>
   </link>
 
-  <joint name="" type="revolute">
+  <joint name="wrist_joint" type="revolute">
     <parent link="wrist_case"/>
     <child link="wrist_motor"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.0 -0.0115 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1 0.0"/>
   </joint>
 
-<!--hand-->
+<!--hand(done)-->
   <link name="hand">
     <visual>
       <geometry>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.03 0.052 0.02408"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.015 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="wrist_hand_joint" type="fixed">
     <parent link="wrist_motor"/>
     <child link="hand"/>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
   </joint>
 
-<!--gripper motor case-->
+<!--gripper motor case(done)-->
   <link name="gripper_case">
     <visual>
       <geometry>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.02854 0.065 0.04"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.01427 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="white"/>
     </visual>
   </link>
 
-  <joint name="" type="">
+  <joint name="gripper_hand_joint" type="fixed">
     <parent link="hand"/>
     <child link="gripper_case"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 0.0"/>
+    <origin xyz="0.03 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--left gripper-->
+<!--left gripper(needs velocity ect)-->
   <link name="left_gripper">
     <visual>
       <geometry>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.02844 0.006 0.01935"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.01422 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="blue"/>
     </visual>
   </link>
@@ -251,7 +236,7 @@ uncomplete code
   <joint name="left_gripper_joint" type="prismatic">
     <parent link="gripper_case"/>
     <child link="left_gripper"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
   </joint>
 
@@ -259,9 +244,9 @@ uncomplete code
   <link name="right_gripper">
     <visual>
       <geometry>
-        <box size="0.0 0.0 0.0"/>
+        <box size="0.02844 0.006 0.01935"/>
       </geometry>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.01422 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <material name="blue"/>
     </visual>
   </link>
@@ -269,7 +254,7 @@ uncomplete code
   <joint name="right_gripper_joint" type="prismatic">
     <parent link="gripper_case"/>
     <child link="right_gripper"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
   </joint>
 
