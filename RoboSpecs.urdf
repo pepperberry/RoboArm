@@ -20,7 +20,7 @@ uncomplete code
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
 
-<!-- Base plate(done) -->
+<!-- Base plate -->
   <link name="base_link">
     <visual>
       <geometry>
@@ -31,7 +31,7 @@ uncomplete code
     </visual>
   </link>
 
-<!--Base motor(needs velocity ect)-->
+<!--Base motor-->
   <link name="base_motor">
     <visual>
       <geometry>
@@ -47,9 +47,10 @@ uncomplete code
     <child link="base_motor"/>
     <origin xyz="-0.147 0.0 0.025" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 1"/>
+    <limit effort="0.470736" velocity="4.76" lower="-2.0944" upper="1.0472"/>
   </joint>
 
-<!--shoulder motor case(done)-->
+<!--shoulder motor case-->
   <link name="shoulder_case">
     <visual>
       <geometry>
@@ -82,9 +83,10 @@ uncomplete code
     <child link="shoulder_motor"/>
     <origin xyz="0.1738 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
+    <limit effort="" velocity="" lower="-1.5708" upper="1.5708"/>
   </joint>
 
-<!--upper arm(done)-->
+<!--upper arm-->
   <link name="upper_arm">
     <visual>
       <geometry>
@@ -101,7 +103,7 @@ uncomplete code
     <origin xyz="0.1738 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--elbow motor case(done)-->
+<!--elbow motor case-->
   <link name="elbow_case">
     <visual>
       <geometry>
@@ -134,9 +136,10 @@ uncomplete code
     <child link="elbow_motor"/>
     <origin xyz="0.024 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
+    <limit effort="" velocity="" lower="-1.0472" upper="1.5708"/>
   </joint>
 
-<!--forearm(done)-->
+<!--forearm-->
   <link name="forearm">
     <visual>
       <geometry>
@@ -153,7 +156,7 @@ uncomplete code
     <origin xyz="0.06 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--wrist motor case(done)-->
+<!--wrist motor case-->
   <link name="wrist_case">
     <visual>
       <geometry>
@@ -186,9 +189,10 @@ uncomplete code
     <child link="wrist_motor"/>
     <origin xyz="0.0 -0.0115 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
+    <limit effort="" velocity="" lower="-1.5708" upper="1.5708"/>
   </joint>
 
-<!--hand(done)-->
+<!--hand-->
   <link name="hand">
     <visual>
       <geometry>
@@ -205,7 +209,7 @@ uncomplete code
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-<!--gripper motor case(done)-->
+<!--gripper motor case-->
   <link name="gripper_case">
     <visual>
       <geometry>
@@ -238,9 +242,10 @@ uncomplete code
     <child link="left_gripper"/>
     <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
+    <limit effort="" velocity="" lower="0.0" upper="0.0165"/>
   </joint>
 
-<!--right gripper-->
+<!--right gripper(needs velocity ect)-->
   <link name="right_gripper">
     <visual>
       <geometry>
@@ -256,6 +261,7 @@ uncomplete code
     <child link="right_gripper"/>
     <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
+    <limit effort="" velocity="" lower="0.0" upper="0.0165"/>
   </joint>
 
 <!--link and joint outline
