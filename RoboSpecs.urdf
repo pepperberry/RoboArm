@@ -47,7 +47,7 @@ uncomplete code
     <child link="base_motor"/>
     <origin xyz="-0.147 0.0 0.025" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="0.470736" velocity="4.76" lower="-2.0944" upper="1.0472"/>
+    <limit effort="0.47" velocity="4.75" lower="-2.0944" upper="1.0472"/>
   </joint>
 
 <!--shoulder motor case-->
@@ -83,7 +83,7 @@ uncomplete code
     <child link="shoulder_motor"/>
     <origin xyz="0.1738 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
-    <limit effort="" velocity="" lower="-1.5708" upper="1.5708"/>
+    <limit effort="1.94" velocity="5.49" lower="-1.5708" upper="1.5708"/>
   </joint>
 
 <!--upper arm-->
@@ -136,7 +136,7 @@ uncomplete code
     <child link="elbow_motor"/>
     <origin xyz="0.024 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
-    <limit effort="" velocity="" lower="-1.0472" upper="1.5708"/>
+    <limit effort="1.07" velocity="4.53" lower="-1.0472" upper="1.5708"/>
   </joint>
 
 <!--forearm-->
@@ -189,7 +189,7 @@ uncomplete code
     <child link="wrist_motor"/>
     <origin xyz="0.0 -0.0115 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1 0.0"/>
-    <limit effort="" velocity="" lower="-1.5708" upper="1.5708"/>
+    <limit effort="0.755" velocity="4.36" lower="-1.5708" upper="1.5708"/>
   </joint>
 
 <!--hand-->
@@ -242,7 +242,7 @@ uncomplete code
     <child link="left_gripper"/>
     <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
-    <limit effort="" velocity="" lower="0.0" upper="0.0165"/>
+    <limit effort="0.755" velocity="4.97" lower="0.0" upper="0.0165"/>
   </joint>
 
 <!--right gripper(needs velocity ect)-->
@@ -261,7 +261,7 @@ uncomplete code
     <child link="right_gripper"/>
     <origin xyz="0.02854 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
-    <limit effort="" velocity="" lower="0.0" upper="0.0165"/>
+    <limit effort="0.755" velocity="4.97" lower="0.0" upper="0.0165"/>
   </joint>
 
 <!--link and joint outline
